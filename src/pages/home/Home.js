@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "../../components/forms/ContactForm";
 import LandingHeader from "../../components/headers/landing-header/LandingHeader";
 import Hero from "../../components/hero/Hero.js";
 import CategoriesSection from "../../components/sections/categories/CategoriesSection";
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <FeaturedSections />
       <CategoriesSection />
+      <ContactForm />
     </>
   );
 };

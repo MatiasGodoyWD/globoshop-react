@@ -1,0 +1,136 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: red !important;
+  opacity: 20%;
+  margin: 0rem 10%;
+  transition: var(--animation);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 100%;
+  transition: var(--animation);
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--primary-red) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-red) !important;
+}
+
+.slider__section {
+  height: 44rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rem;
+  padding: 4rem 0rem;
+  /* margin-bottom: 2rem; */
+  /* background-color: blue; */
+}
+
+.swiper__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
+  padding: 1rem 0rem;
+  position: relative;
+}
+.swiper {
+  height: 99%;
+  width: 60rem;
+  display: flex;
+  position: unset;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 1rem;
+}
+
+.swiper__slider {
+  position: unset;
+  width: 100%;
+  height: 99%;
+  border-radius: 1rem;
+}
+
+.swiper-pagination {
+  position: unset !important;
+  margin-top: -2rem;
+}
+
+.slider__section__title {
+  width: 100%;
+  text-align: center;
+  font-size: 2.2rem;
+}
+.slider__section__button {
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.swiper-slide {
+  transform: scale(0.9);
+  transition: var(--animation);
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  transition: var(--animation);
+}
+
+@media (min-width: 300px) and (max-width: 901px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    visibility: hidden;
+  }
+  .slider__section__title {
+    font-size: 2rem;
+    padding: 0rem 1rem;
+  }
+  .swiper {
+    width: 100%;
+  }
+
+  @media (min-width: 300px) and (max-width: 360px) {
+    .slider__section__title {
+      font-size: 1.7rem;
+      padding: 0rem 1rem;
+    }
+  }
+  @media (min-width: 700px) and (max-width: 901px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      visibility: visible;
+    }
+  }
+}
+@media (min-width: 901px) and (max-width: 1400px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 2%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 0rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 0rem 4%;
+  }
+}

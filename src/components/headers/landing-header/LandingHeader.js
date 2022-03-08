@@ -42,7 +42,7 @@ const LandingHeader = () => {
           <a href="#landing__header" className="navbar__link">
             Home
           </a>
-          <a href="#landing__header" className="navbar__link">
+          <a href="#featured__section" className="navbar__link">
             Destacados
           </a>
           <a href="#landing__header" className="navbar__link">

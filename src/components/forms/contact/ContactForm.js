@@ -8,7 +8,10 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
     control,
-  } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
+  } = useForm({
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
+  });
 
   const onSubmit = (data) => {
     console.log(data);

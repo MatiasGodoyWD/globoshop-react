@@ -79,12 +79,12 @@
 }
 
 .swiper-slide {
-  transform: scale(0.9);
+  transform: scale(0.9) !important;
   transition: var(--animation);
 }
 
 .swiper-slide-active {
-  transform: scale(1);
+  transform: scale(1) !important;
   transition: var(--animation);
 }
 

@@ -124,6 +124,23 @@
   padding-right: 0.3rem;
 }
 
+.form__error {
+  color: white;
+  display: flex;
+  font-size: 0.9rem;
+  align-items: center;
+  /* height: 1.5rem; */
+  height: 2rem;
+}
+
+.form__error svg {
+  margin-top: 0.1rem;
+  margin-right: 0.4rem;
+  background-color: red;
+  padding: 0.1rem 0.2rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
 @media (min-width: 300px) and (max-width: 901px) {
   .contact__section {
     padding: 4rem 2rem;

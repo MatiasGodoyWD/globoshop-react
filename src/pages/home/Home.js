@@ -1,5 +1,6 @@
 import React from "react";
-import ContactForm from "../../components/forms/ContactForm";
+import ContactForm from "../../components/forms/contact/ContactForm";
+
 import LandingHeader from "../../components/headers/landing-header/LandingHeader";
 import Hero from "../../components/hero/Hero.js";
 import CategoriesSection from "../../components/sections/categories/CategoriesSection";

@@ -7,7 +7,7 @@ import "swiper/scss/pagination";
 import HomeCard from "../cards/HomeCard";
 import { Navigation, Pagination } from "swiper";
 
-const CardSwiper = ({ id, className, title, action, content }) => {
+const CardSwiper = ({ id, title, action, content }) => {
   return (
     <>
       <h2 className="slider__section__title">{title}</h2>
@@ -37,16 +37,16 @@ const CardSwiper = ({ id, className, title, action, content }) => {
             },
           }}
         >
-          {content.map((c) => (
-            <SwiperSlide className="swiper-slide">
+          {content.map((c, index) => (
+            <SwiperSlide key={index} className={`swiper-slide`}>
               <HomeCard product={c}></HomeCard>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <div class="swiper-pagination" id={id + "-pagination"}></div>
+      <div className="swiper-pagination" id={id + "-pagination"}></div>
       {action && (
-        <a href="../../products.html" class="slider__section__button">
+        <a href="../../products.html" className="slider__section__button">
           Ver catálogo
         </a>
       )}

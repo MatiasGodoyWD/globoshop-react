@@ -48,7 +48,7 @@ const LandingHeader = () => {
           <a href="#landing__header" className="navbar__link">
             Categorias
           </a>
-          <a href="#landing__header" className="navbar__link">
+          <a href="#contact__section" className="navbar__link">
             Contacto
           </a>
         </NavMenu>

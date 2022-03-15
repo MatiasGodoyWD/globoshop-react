@@ -1,7 +1,9 @@
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Input from "../../input/Input";
 import "../forms.css";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const ContactForm = () => {
   const {
@@ -28,7 +30,24 @@ const ContactForm = () => {
         >
           <h2 className="form__title">Contacto</h2>
           <div className="form__section-data">
-            <Controller
+            <Input
+              control={control}
+              name="email"
+              className="form__input"
+              error={errors.email}
+              id="form__email"
+              label="E-mail"
+              placeholder="Ingrese su email..."
+              type="text"
+              rules={{
+                required: "Este campo no puede estar vacio",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Por favor, ingrese un email valido.",
+                },
+              }}
+            />
+            {/* <Controller
               name="email"
               control={control}
               rules={{
@@ -88,7 +107,7 @@ const ContactForm = () => {
                   textArea
                 />
               )}
-            />
+            /> */}
           </div>
           <button type="submit" className="form__btn">
             Enviar

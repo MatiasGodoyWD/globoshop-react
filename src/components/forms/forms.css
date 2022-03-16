@@ -67,7 +67,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0rem;
+  /* padding: 0rem 0rem 1rem 0rem; */
 }
 
 .form__textarea {
@@ -105,7 +105,7 @@
   display: flex;
   align-items: center;
   padding: 0.2rem 0rem;
-  visibility: hidden;
+
   width: 100%;
   justify-content: center;
   font-weight: 500;
@@ -119,10 +119,15 @@
   font-size: 1.1rem;
 }
 
-#form__confirmation i {
-  padding-top: 0.2rem;
-  padding-right: 0.3rem;
-}
+/* #form__confirmation svg {
+  margin-top: 0.1rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  text-align: center;
+  color: rgb(20, 197, 34);
+  background-color: rgb(255, 255, 255);
+} */
 
 .form__error {
   color: white;
@@ -130,17 +135,38 @@
   font-size: 0.9rem;
   align-items: center;
   /* height: 1.5rem; */
+  padding: 0.1rem 0rem;
   height: 2rem;
 }
 
-.form__error svg {
+.fa-check {
   margin-top: 0.1rem;
-  margin-right: 0.4rem;
-  background-color: red;
-  padding: 0.1rem 0.2rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.3rem;
+  color: white;
+  background-color: rgb(109, 209, 109);
   border-radius: 50%;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
+.fa-xmark {
+  margin-top: 0.1rem;
+  margin-right: 0.3rem;
+  padding: 0.2rem 0.3rem;
+  color: white;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  font-size: 0.55rem;
+}
+/* .form__error svg {
+  margin-top: 0.1rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--primary-red);
+  background-color: rgb(255, 255, 255);
+  border: 0.1rem solid var(--primary-red);
+} */
 @media (min-width: 300px) and (max-width: 901px) {
   .contact__section {
     padding: 4rem 2rem;
@@ -162,12 +188,18 @@
     width: 100%;
   }
 
-  #form__email {
+  /* #form__email {
     margin-bottom: 1rem;
-  }
+  } */
   @media (min-width: 300px) and (max-width: 360px) {
     .form__title {
       font-size: 1.7rem;
     }
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1280px) {
+  .contact__form {
+    width: 60%;
   }
 }

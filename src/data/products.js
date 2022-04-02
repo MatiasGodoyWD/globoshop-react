@@ -353,4 +353,5 @@ const categories = [
 ];
 
 const featuredProducts = products.filter((p) => p.featured);
+
 export { products, categories, featuredProducts };

@@ -6,7 +6,7 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import HomeCard from "../cards/HomeCard";
 import { Navigation, Pagination } from "swiper";
-
+import { Link } from "react-router-dom";
 const CardSwiper = ({ id, title, action, content }) => {
   return (
     <>
@@ -46,9 +46,10 @@ const CardSwiper = ({ id, title, action, content }) => {
       </div>
       <div className="swiper-pagination" id={id + "-pagination"}></div>
       {action && (
-        <a href="../../products.html" className="slider__section__button">
-          Ver catálogo
-        </a>
+        <Link to="/productos" className="slider__section__button">
+          {" "}
+          Ver catálogo{" "}
+        </Link>
       )}
     </>
   );

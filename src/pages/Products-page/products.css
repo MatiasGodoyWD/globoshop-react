@@ -1,0 +1,200 @@
+.filter__section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
+  height: 10rem;
+  padding: 2rem;
+  z-index: 1200;
+}
+.filter__options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter__tab svg {
+  margin-right: 0.3rem;
+  margin-left: -0.3rem;
+}
+
+.filter__tab {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-black);
+  background: var(--primary-white);
+  display: none;
+  cursor: pointer;
+  border-bottom: 0.1rem solid rgba(109, 109, 109, 0.096);
+  border-top: 0.1rem solid rgba(109, 109, 109, 0.096);
+  margin-top: 1rem;
+}
+
+.select__label {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  font-family: var(--primary-text);
+  font-size: 0.9rem;
+  align-self: flex-start;
+  color: var(--primary-black);
+}
+.select__input {
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.3rem;
+  font-family: var(--secondary-text);
+  font-weight: 300;
+  border: 1.5px solid rgba(0, 0, 0, 0.171);
+  background-color: var(--primary-white);
+  font-family: var(--secondary-text);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.form-control-select {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.form__control-size {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.product-grid__section {
+  display: grid;
+  width: 80%;
+  justify-content: center;
+  grid-auto-columns: 70%;
+  grid-auto-rows: auto;
+  padding: 2rem 0rem;
+  row-gap: 2rem;
+  min-height: 40vh;
+}
+.product-grid__section-empty {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+}
+
+.product__message {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-white);
+  width: 100%;
+  height: 3rem;
+  color: var(--primary-red);
+  font-weight: 700;
+  border-top: 0.05rem solid var(--primary-red);
+  display: none;
+  -webkit-animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  overflow: hidden;
+}
+
+@media (min-width: 300px) and (max-width: 901px) {
+  .product-grid__section {
+    width: 100%;
+    grid-auto-columns: 80%;
+    min-height: 50vh;
+  }
+  .filter__section {
+    width: 100%;
+    height: 3rem;
+    padding: 0rem;
+    border-bottom: 0rem solid rgba(109, 109, 109, 0);
+  }
+  .filter__tab {
+    display: flex;
+    width: 100%;
+    transition: var(--animation);
+    position: relative;
+    transition: var(--animation);
+  }
+  .filter__options {
+    position: absolute;
+    margin-top: 3rem;
+    flex-direction: column;
+    width: 100%;
+    height: 22rem;
+    padding: 1rem 0rem 3rem 0rem;
+    background-color: var(--primary-white);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transform: translateX(-200%);
+    transition: var(--animation);
+  }
+  .form-control-select {
+    width: 80%;
+  }
+  .filter__tab-active {
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    color: var(--primary-red);
+    transition: var(--animation);
+  }
+  .filter__options-active {
+    transform: translateX(0);
+    transition: var(--animation);
+  }
+  @media (min-width: 500px) and (max-width: 901px) {
+    .product-grid__section {
+      width: 100%;
+      grid-auto-columns: 50%;
+    }
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .product-grid__section {
+    width: 100%;
+    grid-auto-columns: 80%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .product-grid__section {
+    width: 100%;
+    grid-auto-columns: 65%;
+  }
+}
+
+.empty__grid {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: red;
+}
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -12,7 +12,6 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  categories: categoriesReducer,
   products: productsReducer,
 });
 

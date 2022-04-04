@@ -8,8 +8,8 @@ const Street = () => {
     <>
       <ProductsHeader />
       <main>
-        <FilterSection />
-        <ProductGrid category="salida" />
+        <FilterSection category={"salida"} />
+        <ProductGrid category={"salida"} />
       </main>
     </>
   );

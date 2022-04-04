@@ -8,8 +8,8 @@ const Training = () => {
     <>
       <ProductsHeader />
       <main>
-        <FilterSection />
-        <ProductGrid category="entrenamiento" />
+        <FilterSection category={"entrenamiento"} />
+        <ProductGrid category={"entrenamiento"} />
       </main>
     </>
   );

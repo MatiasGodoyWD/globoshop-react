@@ -8,8 +8,8 @@ const Match = () => {
     <>
       <ProductsHeader />
       <main>
-        <FilterSection />
-        <ProductGrid category="juego" />
+        <FilterSection category={"juego"} />
+        <ProductGrid category={"juego"} />
       </main>
     </>
   );

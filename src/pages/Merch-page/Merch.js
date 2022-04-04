@@ -8,8 +8,8 @@ const Merch = () => {
     <>
       <ProductsHeader />
       <main>
-        <FilterSection />
-        <ProductGrid category="merchandising" />
+        <FilterSection category={"merchandising"} />
+        <ProductGrid category={"merchandising"} />
       </main>
     </>
   );

@@ -6,7 +6,6 @@ const Select = ({
   title,
   id,
   options,
-  placeholder,
   className = "form-control-select",
   changeHandler,
 }) => {
@@ -16,7 +15,6 @@ const Select = ({
         {title}:
       </label>
       <select
-        defaultValue={"Select a value"}
         name={name}
         id={id}
         className="select__input"

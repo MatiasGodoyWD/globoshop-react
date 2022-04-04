@@ -10,10 +10,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import * as productsActions from "../../../redux/products-reducer/products-action";
 
 const ProductsHeader = ({ category }) => {
   const [clicked, setClicked] = useState(false);
-
+  const dispatch = useDispatch();
   const handleClick = (e) => {
     setClicked(!clicked);
   };
@@ -45,23 +48,43 @@ const ProductsHeader = ({ category }) => {
             Home
           </Link>
 
-          <Link to="/productos" className="navbar__link">
+          <Link
+            to="/productos"
+            onClick={() => dispatch(productsActions.resetProducts())}
+            className="navbar__link"
+          >
             Todos
           </Link>
 
-          <Link to="/productos/juego" className="navbar__link">
+          <Link
+            to="/productos/juego"
+            onClick={() => dispatch(productsActions.resetProducts())}
+            className="navbar__link"
+          >
             Juego
           </Link>
 
-          <Link to="/productos/entrenamiento" className="navbar__link">
+          <Link
+            to="/productos/entrenamiento"
+            onClick={() => dispatch(productsActions.resetProducts())}
+            className="navbar__link"
+          >
             Entrenamiento
           </Link>
 
-          <Link to="/productos/salida" className="navbar__link">
+          <Link
+            to="/productos/salida"
+            onClick={() => dispatch(productsActions.resetProducts())}
+            className="navbar__link"
+          >
             Salida
           </Link>
 
-          <Link to="/productos/merchandising" className="navbar__link">
+          <Link
+            to="/productos/merchandising"
+            onClick={() => dispatch(productsActions.resetProducts())}
+            className="navbar__link"
+          >
             Merchandising
           </Link>
         </NavMenu>

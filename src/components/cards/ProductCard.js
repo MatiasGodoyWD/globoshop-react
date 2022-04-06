@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import { sizeOptions } from "../../data/filterOptions";
 import Select from "../select/Select";
+import * as cartActions from "../../redux/cart-reducer/cart-actions";
+import { useDispatch } from "react-redux";
 
 const ProductCard = ({ product }) => {
-  const { img, name, price, category } = product;
+  const [size, setSize] = useState(null);
+  const dispatch = useDispatch();
+  const { id, img, name, price, category } = product;
+
+  const addProductToCart = () => {
+    if (!size) return;
+    dispatch(
+      cartActions.addItem({
+        id: id,
+        img: img,
+        name: name,
+        price: price,
+        size: size,
+      })
+    );
+  };
   return (
     <>
       <div className="product__card" data-aos="fade-right">
@@ -24,12 +41,17 @@ const ProductCard = ({ product }) => {
                   className="form__control-size"
                   title="Seleccionar Talle"
                   options={sizeOptions}
-                  placeholder="Seleccionar talle"
+                  product
+                  changeHandler={(e) => setSize(e.target.value)}
                 />
               }
             </div>
           </div>
-          <button type="submit" className="product__card__info-BTN">
+          <button
+            type="submit"
+            className="product__card__info-BTN"
+            onClick={addProductToCart}
+          >
             AÑADIR AL CARRITO
           </button>
         </div>

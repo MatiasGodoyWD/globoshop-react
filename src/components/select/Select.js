@@ -8,6 +8,7 @@ const Select = ({
   options,
   className = "form-control-select",
   changeHandler,
+  product,
 }) => {
   return (
     <div className={className}>
@@ -20,6 +21,9 @@ const Select = ({
         className="select__input"
         onChange={changeHandler}
       >
+        {product && (
+          <SelectOption selected disabled value="Seleccionar talle..." />
+        )}
         {options.map((op, i) => (
           <SelectOption key={i + "select"} value={op} />
         ))}

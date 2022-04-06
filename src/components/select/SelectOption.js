@@ -1,9 +1,9 @@
 import React from "react";
 
-const SelectOption = ({ value }) => {
+const SelectOption = ({ value, ...props }) => {
   return (
     <>
-      <option value={value}>
+      <option value={value} disabled={props.disabled} selected={props.selected}>
         {value.charAt(0).toUpperCase() + value.slice(1)}
       </option>
     </>

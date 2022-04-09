@@ -17,6 +17,7 @@ import { toggleMenuHidden } from "../../../redux/menus-reducer/menu-actions";
 const LandingHeader = () => {
   const dispatch = useDispatch();
   const menuClicked = useSelector((state) => state.menu.activeMenu);
+  console.log(menuClicked);
   return (
     <>
       <header id="landing__header" className="header">
@@ -41,21 +42,46 @@ const LandingHeader = () => {
           <NavMenu
             menuClass={`navbar__navigation ${menuClicked && "navbar__active"}`}
           >
-            <a href="#landing__header" className="navbar__link">
+            <a
+              href="#landing__header"
+              className="navbar__link"
+              onClick={() => dispatch(toggleMenuHidden())}
+            >
               Home
             </a>
-            <a href="#featured__section" className="navbar__link">
+            <a
+              href="#featured__section"
+              className="navbar__link"
+              onClick={() => dispatch(toggleMenuHidden())}
+            >
               Destacados
             </a>
-            <a href="#landing__header" className="navbar__link">
+            <a
+              href="#landing__header"
+              className="navbar__link"
+              onClick={() => dispatch(toggleMenuHidden())}
+            >
               Categorias
             </a>
-            <a href="#contact__section" className="navbar__link">
+            <a
+              href="#contact__section"
+              className="navbar__link"
+              onClick={() => dispatch(toggleMenuHidden())}
+            >
               Contacto
             </a>
           </NavMenu>
           <NavMenu menuClass="navbar__social">
-            <Link to="/cart" className="navbar__link" id="navbar__cart">
+            <Link
+              to="/cart"
+              className="navbar__link"
+              id="navbar__cart"
+              onClick={() => {
+                if (menuClicked) {
+                  dispatch(toggleMenuHidden());
+                }
+              }}
+            >
               <QuantityBubble />
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>

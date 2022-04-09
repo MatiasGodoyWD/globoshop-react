@@ -20,6 +20,10 @@ const ProductsHeader = ({ category }) => {
   const dispatch = useDispatch();
   const menuClicked = useSelector((state) => state.menu.activeMenu);
 
+  const handleClick = () => {
+    dispatch(toggleMenuHidden());
+    dispatch(productsActions.resetProducts());
+  };
   return (
     <header id="products__header" className="header">
       <Navbar navClass="logo__navbar">
@@ -43,21 +47,21 @@ const ProductsHeader = ({ category }) => {
         <NavMenu
           menuClass={`navbar__navigation ${menuClicked && "navbar__active"}`}
         >
-          <Link to="/" className="navbar__link">
+          <Link
+            to="/"
+            className="navbar__link"
+            onClick={() => dispatch(toggleMenuHidden())}
+          >
             Home
           </Link>
 
-          <Link
-            to="/productos"
-            onClick={() => dispatch(productsActions.resetProducts())}
-            className="navbar__link"
-          >
+          <Link to="/productos" onClick={handleClick} className="navbar__link">
             Todos
           </Link>
 
           <Link
             to="/productos/juego"
-            onClick={() => dispatch(productsActions.resetProducts())}
+            onClick={handleClick}
             className="navbar__link"
           >
             Juego
@@ -65,7 +69,7 @@ const ProductsHeader = ({ category }) => {
 
           <Link
             to="/productos/entrenamiento"
-            onClick={() => dispatch(productsActions.resetProducts())}
+            onClick={handleClick}
             className="navbar__link"
           >
             Entrenamiento
@@ -73,7 +77,7 @@ const ProductsHeader = ({ category }) => {
 
           <Link
             to="/productos/salida"
-            onClick={() => dispatch(productsActions.resetProducts())}
+            onClick={handleClick}
             className="navbar__link"
           >
             Salida
@@ -81,14 +85,23 @@ const ProductsHeader = ({ category }) => {
 
           <Link
             to="/productos/merchandising"
-            onClick={() => dispatch(productsActions.resetProducts())}
+            onClick={handleClick}
             className="navbar__link"
           >
             Merchandising
           </Link>
         </NavMenu>
         <NavMenu menuClass="navbar__social">
-          <Link to="/cart" className="navbar__link" id="navbar__cart">
+          <Link
+            to="/cart"
+            className="navbar__link"
+            id="navbar__cart"
+            onClick={() => {
+              if (menuClicked) {
+                handleClick();
+              }
+            }}
+          >
             <QuantityBubble />
             <FontAwesomeIcon icon={faShoppingCart} />
           </Link>

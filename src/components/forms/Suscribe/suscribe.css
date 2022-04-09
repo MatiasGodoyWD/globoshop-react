@@ -60,14 +60,14 @@
   padding-right: 0.3rem;
 }
 
-.subscribe__confirmation-fail i {
+.subscribe__confirmation-fail svg {
   color: var(--primary-red);
   margin-left: -0.5rem;
   margin-right: 0.5rem;
 }
 
-.subscribe__confirmation-success i {
-  color: rgb(64, 209, 28);
+.subscribe__confirmation-success svg {
+  color: #fff;
   margin-left: -0.5rem;
   margin-right: 0.5rem;
 }

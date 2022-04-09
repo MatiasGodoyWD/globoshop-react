@@ -7,7 +7,12 @@ import "swiper/scss/pagination";
 import HomeCard from "../cards/HomeCard";
 import { Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenuHidden } from "../../redux/menus-reducer/menu-actions";
+
 const CardSwiper = ({ id, title, action, content, categories }) => {
+  const dispatch = useDispatch();
+  const active = useSelector((state) => state.menu.active);
   return (
     <>
       <h2 className="slider__section__title">{title}</h2>
@@ -40,7 +45,14 @@ const CardSwiper = ({ id, title, action, content, categories }) => {
           {content.map((c, index) => (
             <SwiperSlide key={index} className={`swiper-slide`}>
               {categories ? (
-                <Link to={`/productos/${c.name}`}>
+                <Link
+                  to={`/productos/${c.name}`}
+                  onClick={() => {
+                    if (active) {
+                      dispatch(toggleMenuHidden());
+                    }
+                  }}
+                >
                   <HomeCard product={c}></HomeCard>
                 </Link>
               ) : (
@@ -52,7 +64,11 @@ const CardSwiper = ({ id, title, action, content, categories }) => {
       </div>
       <div className="swiper-pagination" id={id + "-pagination"}></div>
       {action && (
-        <Link to="/productos" className="slider__section__button">
+        <Link
+          to="/productos"
+          className="slider__section__button"
+          onClick={() => dispatch(toggleMenuHidden())}
+        >
           {" "}
           Ver catálogo{" "}
         </Link>

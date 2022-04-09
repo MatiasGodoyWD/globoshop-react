@@ -7,7 +7,7 @@ import "swiper/scss/pagination";
 import HomeCard from "../cards/HomeCard";
 import { Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
-const CardSwiper = ({ id, title, action, content }) => {
+const CardSwiper = ({ id, title, action, content, categories }) => {
   return (
     <>
       <h2 className="slider__section__title">{title}</h2>
@@ -39,7 +39,13 @@ const CardSwiper = ({ id, title, action, content }) => {
         >
           {content.map((c, index) => (
             <SwiperSlide key={index} className={`swiper-slide`}>
-              <HomeCard product={c}></HomeCard>
+              {categories ? (
+                <Link to={`/productos/${c.name}`}>
+                  <HomeCard product={c}></HomeCard>
+                </Link>
+              ) : (
+                <HomeCard product={c}></HomeCard>
+              )}
             </SwiperSlide>
           ))}
         </Swiper>

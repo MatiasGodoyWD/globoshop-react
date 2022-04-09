@@ -10,16 +10,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import * as productsActions from "../../../redux/products-reducer/products-action";
+import QuantityBubble from "../../quantity-bubble/quantityBubble";
+import { toggleMenuHidden } from "../../../redux/menus-reducer/menu-actions";
 
 const ProductsHeader = ({ category }) => {
-  const [clicked, setClicked] = useState(false);
   const dispatch = useDispatch();
-  const handleClick = (e) => {
-    setClicked(!clicked);
-  };
+  const menuClicked = useSelector((state) => state.menu.activeMenu);
 
   return (
     <header id="products__header" className="header">
@@ -37,12 +36,12 @@ const ProductsHeader = ({ category }) => {
       </Navbar>
       <Navbar navClass="navbar__menu">
         <FontAwesomeIcon
-          icon={!clicked ? faBars : faTimes}
+          icon={!menuClicked ? faBars : faTimes}
           id="navbar__bars"
-          onClick={handleClick}
+          onClick={() => dispatch(toggleMenuHidden())}
         />
         <NavMenu
-          menuClass={`navbar__navigation ${clicked && "navbar__active"}`}
+          menuClass={`navbar__navigation ${menuClicked && "navbar__active"}`}
         >
           <Link to="/" className="navbar__link">
             Home
@@ -89,9 +88,10 @@ const ProductsHeader = ({ category }) => {
           </Link>
         </NavMenu>
         <NavMenu menuClass="navbar__social">
-          <a href="#landing__home" className="navbar__link" id="navbar__cart">
+          <Link to="/cart" className="navbar__link" id="navbar__cart">
+            <QuantityBubble />
             <FontAwesomeIcon icon={faShoppingCart} />
-          </a>
+          </Link>
           <a href="#landing__home" className="navbar__link">
             <FontAwesomeIcon icon={faInstagram} />
           </a>

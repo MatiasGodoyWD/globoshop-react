@@ -4,13 +4,19 @@ import Select from "../select/Select";
 import * as cartActions from "../../redux/cart-reducer/cart-actions";
 import { useDispatch } from "react-redux";
 
+import { toggleModal } from "../../redux/modal/modal-actions";
+
 const ProductCard = ({ product }) => {
   const [size, setSize] = useState(null);
   const dispatch = useDispatch();
   const { id, img, name, price, category } = product;
 
   const addProductToCart = () => {
-    if (!size) return;
+    dispatch(toggleModal(size));
+    if (!size) {
+      return;
+    }
+
     dispatch(
       cartActions.addItem({
         id: id,
@@ -18,9 +24,11 @@ const ProductCard = ({ product }) => {
         name: name,
         price: price,
         size: size,
+        category: category,
       })
     );
   };
+
   return (
     <>
       <div className="product__card" data-aos="fade-right">
@@ -43,6 +51,7 @@ const ProductCard = ({ product }) => {
                   options={sizeOptions}
                   product
                   changeHandler={(e) => setSize(e.target.value)}
+                  value={"Seleccionar talle..."}
                 />
               }
             </div>

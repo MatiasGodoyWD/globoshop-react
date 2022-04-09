@@ -5,7 +5,7 @@ export const addItemToCart = (cartItems, newItem) => {
 
   if (existingCartItem) {
     return cartItems.map((cartItem) => {
-      return cartItem.id === newItem.id
+      return cartItem.id === newItem.id && cartItem.size === newItem.size
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
         : cartItem;
     });
@@ -14,17 +14,21 @@ export const addItemToCart = (cartItems, newItem) => {
   return [...cartItems, { ...newItem, quantity: 1 }];
 };
 
-export const removeItemFromCart = (cartItems, itemToRemove) => {
+export const substractItemFromCart = (cartItems, itemToRemove) => {
   const existingCartItem = cartItems.find(
-    (item) => item.id === itemToRemove.id
+    (item) => item.id === itemToRemove.id && item.size === itemToRemove.size
   );
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter((cartItem) => cartItem.id !== itemToRemove.id);
+    return cartItems;
   }
 
   return cartItems.map((cartItem) => {
-    return cartItem.id === itemToRemove.id
+    return cartItem.id === itemToRemove.id &&
+      cartItem.size === itemToRemove.size
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem;
   });
 };
+
+export const removeItemFromCart = (cartItems, itemTosubstract) =>
+  cartItems.filter((item) => item !== itemTosubstract);

@@ -63,8 +63,9 @@
 .navbar__link:hover,
 .navbar__social > i:hover {
   color: var(--accent-red);
-  transition: 0.1s all linear;
-  transform: scale(1.05);
+  /* transition: 0.1s all linear; */
+  /* transform: scale(1.05); */
+  font-weight: 500;
 }
 
 .navbar__navigation {
@@ -104,14 +105,6 @@
   top: -0.3rem;
   right: -0.5rem;
   cursor: pointer;
-}
-
-.navbar__cart__counter-inactive {
-  visibility: hidden;
-}
-
-.navbar__cart__counter-active {
-  visibility: hidden;
 }
 
 .navbar__fixed {

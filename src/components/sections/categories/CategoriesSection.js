@@ -10,6 +10,7 @@ const CategoriesSection = () => {
         title="Categorías"
         content={categories}
         className="categories__card"
+        categories
       ></CardSwiper>
     </section>
   );

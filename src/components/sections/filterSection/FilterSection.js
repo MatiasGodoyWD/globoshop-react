@@ -1,6 +1,6 @@
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as productsActions from "../../../redux/products-reducer/products-action";
 import {
@@ -9,30 +9,35 @@ import {
   typeOptions,
 } from "../../../data/filterOptions";
 import Select from "../../select/Select";
+import { toggleFilterHidden } from "../../../redux/menus-reducer/menu-actions";
 
 const FilterSection = ({ category }) => {
   const dispatch = useDispatch();
-  const [showFilterBar, setShowFilterBar] = useState(false);
-  let productsReducer = useSelector((state) => state.products);
 
-  const handleFilterBar = () => {
-    setShowFilterBar(!showFilterBar);
-  };
+  let productsReducer = useSelector((state) => state.products);
+  let clicked = useSelector((state) => state.menu.activeFilterBar);
 
   const handleFilter = (e) => {
     productsReducer.filterValues[e.target.name] = e.target.value;
-
     dispatch(productsActions.filterProducts(category));
+    dispatch(toggleFilterHidden());
   };
 
   return (
     <>
       <section className="filter__section">
-        <div className="filter__tab">
-          <FontAwesomeIcon icon={faFilter} onClick={handleFilterBar} />
+        <div
+          className={`filter__tab ${clicked ? "filter__tab-active" : ""}`}
+          onClick={() => dispatch(toggleFilterHidden())}
+        >
+          <FontAwesomeIcon icon={faFilter} />
           Preferencias
         </div>
-        <div className="filter__options">
+        <div
+          className={`filter__options ${
+            clicked ? "filter__options-active" : ""
+          }`}
+        >
           <Select
             name="sort"
             title="Ordenar Por"

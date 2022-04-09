@@ -1,6 +1,7 @@
 import { products } from "../../data/products";
 import { FILTER_PRODUCTS, RESET_SHOWN_PRODUCTS } from "./products-action";
 import { filterProducts } from "./products-utils";
+
 const initialState = {
   products: products,
   shownProducts: products,

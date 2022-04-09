@@ -41,7 +41,6 @@ export const filterByPrice = (value, prods) => {
 export const filterProducts = (values, prods, category) => {
   let products = [...prods];
   if (category) {
-    console.log(values);
     products = products.filter((p) => p.category === category);
   }
   orderProducts(values.sort, products);

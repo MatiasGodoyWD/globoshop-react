@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "../header.css";
 import Navbar from "../../navbars/Navbar";
 import NavMenu from "../../navMenu/NavMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShoppingCart,
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as productsActions from "../../../redux/products-reducer/products-action";
-import QuantityBubble from "../../quantity-bubble/quantityBubble";
 import { toggleMenuHidden } from "../../../redux/menus-reducer/menu-actions";
+import LogosHeader from "../headers-components/LogosHeader";
+import SocialHeader from "../headers-components/SocialHeader";
 
 const ProductsHeader = ({ category }) => {
   const dispatch = useDispatch();
@@ -26,18 +23,7 @@ const ProductsHeader = ({ category }) => {
   };
   return (
     <header id="products__header" className="header">
-      <Navbar navClass="logo__navbar">
-        <img
-          src="https://i.ibb.co/ysTytXC/GLOBOSHOP.png"
-          alt="Globoshop store"
-          className="navbar__logo"
-        />
-        <img
-          src="https://i.ibb.co/C541p5d/slogan2.png"
-          alt="Siempre en el mismo barrio"
-          className="navbar__slogan"
-        />
-      </Navbar>
+      <LogosHeader />
       <Navbar navClass="navbar__menu">
         <FontAwesomeIcon
           icon={!menuClicked ? faBars : faTimes}
@@ -91,27 +77,7 @@ const ProductsHeader = ({ category }) => {
             Merchandising
           </Link>
         </NavMenu>
-        <NavMenu menuClass="navbar__social">
-          <Link
-            to="/cart"
-            className="navbar__link"
-            id="navbar__cart"
-            onClick={() => {
-              if (menuClicked) {
-                handleClick();
-              }
-            }}
-          >
-            <QuantityBubble />
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </Link>
-          <a href="#landing__home" className="navbar__link">
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="#landing__home" className="navbar__link">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </NavMenu>
+        <SocialHeader />
       </Navbar>
     </header>
   );

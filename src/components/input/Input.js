@@ -6,6 +6,7 @@ import { useController } from "react-hook-form";
 const Input = ({
   id,
   className,
+  labelClass,
   type,
   placeholder,
   label,
@@ -44,7 +45,7 @@ const Input = ({
   return (
     <div className={textArea ? "form__control-textarea" : "form-control"}>
       {label && (
-        <label htmlFor={id} className="form__label">
+        <label htmlFor={id} className={`form__label ${labelClass}`}>
           {label}:
         </label>
       )}

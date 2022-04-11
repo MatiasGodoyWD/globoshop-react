@@ -12,7 +12,7 @@ import { toggleMenuHidden } from "../../redux/menus-reducer/menu-actions";
 
 const CardSwiper = ({ id, title, action, content, categories }) => {
   const dispatch = useDispatch();
-  const active = useSelector((state) => state.menu.active);
+  const active = useSelector((state) => state.menu.activeMenu);
   return (
     <>
       <h2 className="slider__section__title">{title}</h2>

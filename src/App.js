@@ -8,6 +8,7 @@ import Merch from "./pages/Merch-page/Merch";
 import Street from "./pages/Street-page/Street";
 import CartPage from "./pages/Cart/CartPage";
 import { useLayoutEffect } from "react";
+import Shipping from "./pages/Shipping/Shipping";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/productos/salida" element={<Street />} />
           <Route exact path="/productos/merchandising" element={<Merch />} />
           <Route exact path="/cart" element={<CartPage />} />
+          <Route exact path="/shipping" element={<Shipping />} />
         </Routes>
       </Wrapper>
     </>

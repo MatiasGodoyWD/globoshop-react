@@ -49,6 +49,7 @@ const ContactForm = () => {
               control={control}
               name="email"
               className="form__input"
+              labelClass="form__label-white"
               error={errors.email}
               id="form__email"
               label="E-mail"
@@ -59,6 +60,7 @@ const ContactForm = () => {
               control={control}
               name="fullName"
               className="form__input"
+              labelClass="form__label-white"
               error={errors.fullName}
               id="form__name"
               label="Nombre Completo"
@@ -71,6 +73,7 @@ const ContactForm = () => {
               control={control}
               name="msg"
               className="form__textarea"
+              labelClass="form__label-white"
               error={errors.msg}
               id="textarea"
               label="Mensaje"

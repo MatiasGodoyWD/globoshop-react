@@ -23,4 +23,26 @@ const suscribeSchema = Yup.object().shape({
     .lowercase(),
 });
 
-export { schema, suscribeSchema };
+const shippingSchema = Yup.object().shape({
+  email: Yup.string()
+    .required("Este campo no puede estar vacío")
+    .email("Por favor,ingrese un e-mail valido")
+    .lowercase(),
+  name: Yup.string()
+    .required("Este campo no puede estar vacío")
+    .lowercase()
+    .trim()
+    .transform((str) => str.replace(/ {2,}/g, " ")),
+  surname: Yup.string()
+    .required("Este campo no puede estar vacío")
+    .lowercase()
+    .trim()
+    .transform((str) => str.replace(/ {2,}/g, " ")),
+  adress: Yup.string()
+    .required("Este campo no puede estar vacío")
+    .lowercase()
+    .trim()
+    .transform((str) => str.replace(/ {2,}/g, " ")),
+});
+
+export { schema, suscribeSchema, shippingSchema };

@@ -50,6 +50,12 @@
   align-self: flex-start;
   color: var(--primary-white);
 }
+.form__label-white {
+  color: var(--primary-white);
+}
+.form__label-black {
+  color: var(--primary-black);
+}
 .form__input,
 .form__textarea {
   padding: 0.7rem 0.4rem;

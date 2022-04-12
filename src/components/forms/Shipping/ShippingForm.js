@@ -50,6 +50,7 @@ const ShippingForm = () => {
             name="name"
             className="form__input"
             labelClass="form__label-black"
+            errorClass="shippingForm__error"
             error={errors.name}
             id="form__name"
             label="Nombre"
@@ -61,6 +62,7 @@ const ShippingForm = () => {
             name="surname"
             className="form__input"
             labelClass="form__label-black"
+            errorClass="shippingForm__error"
             error={errors.surname}
             id="form__surname"
             label="Apellido"
@@ -72,6 +74,7 @@ const ShippingForm = () => {
             name="email"
             className="form__input"
             labelClass="form__label-black"
+            errorClass="shippingForm__error"
             error={errors.email}
             id="form__email"
             label="E-mail"
@@ -83,6 +86,7 @@ const ShippingForm = () => {
             name="adress"
             className="form__input"
             labelClass="form__label-black"
+            errorClass="shippingForm__error"
             error={errors.adress}
             id="form__adress"
             label="Dirección"

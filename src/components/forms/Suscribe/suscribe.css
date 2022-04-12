@@ -55,21 +55,24 @@
   font-size: 1.1rem;
 }
 
-#subscribe__confirmation i {
-  padding-top: 0.2rem;
-  padding-right: 0.3rem;
-}
+/* #subscribe__confirmation svg {
+  padding-top: 0.14rem;
+  padding-right: 0.1rem;
+  font-size: 1.2rem;
+} */
 
-.subscribe__confirmation-fail svg {
-  color: var(--primary-red);
-  margin-left: -0.5rem;
-  margin-right: 0.5rem;
-}
-
-.subscribe__confirmation-success svg {
+.subscribe__confirmation-fail .fa-xmark {
+  margin-top: 0.1rem;
   color: #fff;
   margin-left: -0.5rem;
   margin-right: 0.5rem;
+  padding: 0.2rem 0.35rem;
+  /* padding: 0.4rem 0.4rem; */
+  display: flex;
+  color: white;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 300px) and (max-width: 901px) {

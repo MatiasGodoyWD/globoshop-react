@@ -3,10 +3,12 @@ import Footer from "../../components/footer/Footer";
 import ShippingForm from "../../components/forms/Shipping/ShippingForm";
 import LogosHeader from "../../components/headers/headers-components/LogosHeader";
 import MainWrapper from "../../components/sections/main-wrapper/MainWrapper";
+import SuccessModal from "../../components/success-modal/SuccessModal";
 
 const Shipping = () => {
   return (
     <>
+      <SuccessModal />
       <header
         className="shipping__header"
         id="Shipping__header"

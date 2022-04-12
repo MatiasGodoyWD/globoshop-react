@@ -32,9 +32,11 @@ const CartGrid = () => {
                 <span className="cart__total-price">${cartTotal}</span>
               </div>
               <div className="cart__button-container" data-aos="fade-right">
-                <button className="cart__button" type="submit">
-                  Continuar compra
-                </button>
+                <Link to="/shipping">
+                  <button className="cart__button" type="submit">
+                    Continuar compra
+                  </button>
+                </Link>
               </div>
             </>
           )}

@@ -107,17 +107,22 @@ td {
   font-size: 1.1rem;
 }
 
-.form__error {
-  color: var(--primary-red);
-  /* background-color: turquoise; */
+.shippingForm__error {
+  color: var(--primary-black);
   display: flex;
   font-size: 0.9rem;
   align-items: center;
-  /* height: 1.5rem; */
   height: 2rem;
 }
-.form__error i {
+
+.shippingForm__error svg {
+  margin-top: 0.1rem;
   margin-right: 0.3rem;
+  padding: 0.2rem 0.3rem;
+  color: white;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  font-size: 0.55rem;
 }
 
 .shipping__message {

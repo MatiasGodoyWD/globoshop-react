@@ -13,6 +13,7 @@ const ProductCard = ({ product }) => {
 
   const addProductToCart = () => {
     dispatch(toggleModal(size));
+
     if (!size) {
       return;
     }

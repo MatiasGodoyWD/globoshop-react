@@ -7,6 +7,7 @@ const Input = ({
   id,
   className,
   labelClass,
+  errorClass,
   type,
   placeholder,
   label,
@@ -51,12 +52,12 @@ const Input = ({
       )}
       {selectedInput}
       {error ? (
-        <span className="form__error">
+        <span className={errorClass}>
           <FontAwesomeIcon icon={faTimes} />
           {error.message}
         </span>
       ) : (
-        <span className="form__error"></span>
+        <span className={errorClass}></span>
       )}
     </div>
   );

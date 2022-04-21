@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../redux/modal/modal-actions";
 
-const ProductModal = () => {
+const ProductModal = ({ message }) => {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal);
   console.log(modal.modalState);
@@ -25,12 +25,12 @@ const ProductModal = () => {
     <>
       {modal.modalState === null && (
         <div className={`product__message product__message-error`}>
-          Seleccione un talle para su producto.
+          {message}
         </div>
       )}
       {modal.modalState !== null && (
         <div className={`product__message product__message-success`}>
-          Su producto ha sido agregado al carrito.
+          {message}
         </div>
       )}
     </>

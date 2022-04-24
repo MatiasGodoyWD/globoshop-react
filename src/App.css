@@ -67,8 +67,3 @@ button:hover,
   transition: var(--animation);
   background-color: #cc0219;
 }
-
-.toaster-container {
-  width: unset;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}

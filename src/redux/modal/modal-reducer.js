@@ -4,6 +4,7 @@ import { toggleModalState } from "./modal-utils";
 const initialState = {
   active: false,
   modalState: "",
+  message: "",
 };
 const modalReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,6 +13,7 @@ const modalReducer = (state = initialState, action) => {
         ...state,
         active: !state.active,
         modalState: toggleModalState(action.size),
+        message: action.message,
       };
 
     default:

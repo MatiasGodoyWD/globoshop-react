@@ -3,16 +3,21 @@ import { useForm } from "react-hook-form";
 import Input from "../../input/Input";
 import "./shipping.css";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
 import { shippingSchema } from "../../../helpers/schema";
 import ProductsTable from "../../productsTable/ProductsTable";
+import { useDispatch } from "react-redux";
+
+import { toggleModal } from "../../../redux/modal/modal-actions";
+import { Route, Navigate } from "react-router-dom";
+import Home from "../../../pages/home/Home";
 
 const ShippingForm = () => {
-  const [isValid, setIsValid] = useState(false);
+  const dispatch = useDispatch();
+
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { isValid, errors },
     control,
     reset,
   } = useForm({
@@ -23,19 +28,11 @@ const ShippingForm = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    setIsValid(true);
+    dispatch(toggleModal(isValid, "¡Gracias por comprar en Globoshop!"));
     reset({ email: "", name: "", surname: "", adress: "" });
+    localStorage.clear();
   };
 
-  useEffect(() => {
-    let interval;
-    interval = setTimeout(() => {
-      setIsValid(false);
-    }, 2000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [isValid]);
   return (
     <>
       <form
@@ -77,7 +74,7 @@ const ShippingForm = () => {
             errorClass="shippingForm__error"
             error={errors.email}
             id="form__email"
-            label="E-mail"
+            label="E-mail*"
             placeholder="Ingrese su email..."
             type="text"
           />
@@ -94,6 +91,7 @@ const ShippingForm = () => {
             type="text"
           />
         </div>
+
         <div className="shipping__type">
           <p className="shipping__option">
             <input
@@ -104,6 +102,7 @@ const ShippingForm = () => {
               checked
               readOnly
             />
+
             <label
               className="form__label-black radio-label"
               htmlFor="home-shipping"
@@ -111,8 +110,14 @@ const ShippingForm = () => {
               Enviar al domicilio
             </label>
           </p>
-          <p className="shipping__info">Llega entre 3 y 5 días habiles.</p>
+          <p className="shipping__info">
+            Llega entre 3 y 5 días habiles por medio de Mercado Envíos.
+          </p>
         </div>
+        <p class="shipping__disclaimer">
+          * Los datos de su compra se le enviarán al correo electrónico
+          ingresado.
+        </p>
         <ProductsTable />
         <div className="shipping__payment">
           <p className="shipping__option">

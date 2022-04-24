@@ -12,12 +12,11 @@ const ProductCard = ({ product }) => {
   const { id, img, name, price, category } = product;
 
   const addProductToCart = () => {
-    dispatch(toggleModal(size));
-
     if (!size) {
+      dispatch(toggleModal(size, "Por favor, seleccione un talle."));
       return;
     }
-
+    dispatch(toggleModal(size, "El producto se agrego al carrito."));
     dispatch(
       cartActions.addItem({
         id: id,

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../redux/modal/modal-actions";
 
-const ProductModal = ({ message }) => {
+const ProductModal = () => {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal);
-  console.log(modal.modalState);
+  console.log(modal);
   const changeModalState = (state) => {
     dispatch(toggleModal(state));
   };
@@ -25,12 +25,12 @@ const ProductModal = ({ message }) => {
     <>
       {modal.modalState === null && (
         <div className={`product__message product__message-error`}>
-          {message}
+          {modal.message}
         </div>
       )}
       {modal.modalState !== null && (
         <div className={`product__message product__message-success`}>
-          {message}
+          {modal.message}
         </div>
       )}
     </>

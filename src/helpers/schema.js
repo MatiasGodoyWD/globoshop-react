@@ -30,12 +30,12 @@ const shippingSchema = Yup.object().shape({
     .lowercase(),
   name: Yup.string()
     .required("Este campo no puede estar vacío")
-    .lowercase()
+    .uppercase()
     .trim()
     .transform((str) => str.replace(/ {2,}/g, " ")),
   surname: Yup.string()
     .required("Este campo no puede estar vacío")
-    .lowercase()
+    .uppercase()
     .trim()
     .transform((str) => str.replace(/ {2,}/g, " ")),
   adress: Yup.string()

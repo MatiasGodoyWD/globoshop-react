@@ -11,13 +11,14 @@ import { useDispatch } from "react-redux";
 import { toggleModal } from "../../../redux/modal/modal-actions";
 import { Route, Navigate } from "react-router-dom";
 import Home from "../../../pages/home/Home";
+import { sendMail } from "../../../helpers/email";
 
 const ShippingForm = () => {
   const dispatch = useDispatch();
   const [isValidForm, setIsValidForm] = useState(false);
   const {
     handleSubmit,
-    formState: { isValid, errors },
+    formState: { errors },
     control,
     reset,
   } = useForm({
@@ -27,8 +28,18 @@ const ShippingForm = () => {
   });
 
   const onSubmit = (data) => {
+    const { name, surname, email, direction } = data;
+    console.log(data);
     setIsValidForm(!isValidForm);
     dispatch(toggleModal(isValidForm, "¡Gracias por comprar en Globoshop!"));
+    let templateParams = {
+      name: name,
+      surname: surname,
+      email: email,
+      table: document.querySelector(".table__container").innerHTML,
+      direction: direction,
+    };
+    sendMail(templateParams);
     reset({ email: "", name: "", surname: "", adress: "" });
     localStorage.clear();
   };

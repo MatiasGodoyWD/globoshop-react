@@ -14,7 +14,7 @@ const ProductModal = () => {
     let interval;
     interval = setTimeout(() => {
       changeModalState("");
-    }, 3000);
+    }, 1500);
     return () => {
       clearInterval(interval);
     };

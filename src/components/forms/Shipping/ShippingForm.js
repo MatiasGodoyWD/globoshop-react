@@ -14,7 +14,7 @@ import Home from "../../../pages/home/Home";
 
 const ShippingForm = () => {
   const dispatch = useDispatch();
-
+  const [isValidForm, setIsValidForm] = useState(false);
   const {
     handleSubmit,
     formState: { isValid, errors },
@@ -27,11 +27,24 @@ const ShippingForm = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    dispatch(toggleModal(isValid, "¡Gracias por comprar en Globoshop!"));
+    setIsValidForm(!isValidForm);
+    dispatch(toggleModal(isValidForm, "¡Gracias por comprar en Globoshop!"));
     reset({ email: "", name: "", surname: "", adress: "" });
     localStorage.clear();
   };
+
+  useEffect(() => {
+    let interval;
+    interval = setTimeout(() => {
+      if (isValidForm) {
+        window.location.replace("/");
+      }
+    }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isValidForm]);
 
   return (
     <>

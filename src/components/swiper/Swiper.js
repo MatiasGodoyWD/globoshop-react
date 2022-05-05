@@ -13,6 +13,11 @@ import { toggleMenuHidden } from "../../redux/menus-reducer/menu-actions";
 const CardSwiper = ({ id, title, action, content, categories }) => {
   const dispatch = useDispatch();
   const active = useSelector((state) => state.menu.activeMenu);
+  const closeMenu = () => {
+    if (active) {
+      dispatch(toggleMenuHidden());
+    }
+  };
   return (
     <>
       <h2 className="slider__section__title">{title}</h2>
@@ -45,14 +50,7 @@ const CardSwiper = ({ id, title, action, content, categories }) => {
           {content.map((c, index) => (
             <SwiperSlide key={index} className={`swiper-slide`}>
               {categories ? (
-                <Link
-                  to={`/productos/${c.name}`}
-                  onClick={() => {
-                    if (active) {
-                      dispatch(toggleMenuHidden());
-                    }
-                  }}
-                >
+                <Link to={`/productos/${c.name}`} onClick={closeMenu}>
                   <HomeCard product={c}></HomeCard>
                 </Link>
               ) : (
@@ -67,7 +65,7 @@ const CardSwiper = ({ id, title, action, content, categories }) => {
         <Link
           to="/productos"
           className="slider__section__button"
-          onClick={() => dispatch(toggleMenuHidden())}
+          onClick={closeMenu}
         >
           {" "}
           Ver catálogo{" "}

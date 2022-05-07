@@ -4,7 +4,6 @@ import Footer from "../../components/footer/Footer";
 import ShippingForm from "../../components/forms/Shipping/ShippingForm";
 import LogosHeader from "../../components/headers/headers-components/LogosHeader";
 import ProductModal from "../../components/modals/ProductModal";
-import MainWrapper from "../../components/sections/main-wrapper/MainWrapper";
 
 const Shipping = () => {
   const modalState = useSelector((state) => state.modal.active);

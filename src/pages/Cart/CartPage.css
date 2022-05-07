@@ -2,6 +2,7 @@
   padding: 2rem 0rem;
   margin: 3rem;
   width: 80%;
+  max-width: 100rem;
   min-height: 50vh;
   background-color: var(--primary-white);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -62,6 +63,7 @@
 
 .cart__product-img {
   width: 12%;
+  max-width: 10rem;
   height: 80%;
   border-radius: 0.3rem;
 }

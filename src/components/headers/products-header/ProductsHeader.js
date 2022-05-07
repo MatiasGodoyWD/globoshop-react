@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import * as productsActions from "../../../redux/products-reducer/products-action";
 import { toggleMenuHidden } from "../../../redux/menus-reducer/menu-actions";
+import * as modalActions from "../../../redux/modal/modal-actions";
 import LogosHeader from "../headers-components/LogosHeader";
 import SocialHeader from "../headers-components/SocialHeader";
 
@@ -20,6 +21,7 @@ const ProductsHeader = ({ category }) => {
   const handleClick = () => {
     dispatch(toggleMenuHidden());
     dispatch(productsActions.resetProducts());
+    dispatch(modalActions.hideModal());
   };
   return (
     <header id="products__header" className="header">

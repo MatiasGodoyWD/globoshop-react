@@ -1,4 +1,4 @@
-import { TOGGLE_MODAL } from "./modal-actions";
+import { TOGGLE_MODAL, HIDE_MODAL } from "./modal-actions";
 import { toggleModalState } from "./modal-utils";
 
 const initialState = {
@@ -14,6 +14,11 @@ const modalReducer = (state = initialState, action) => {
         active: !state.active,
         modalState: toggleModalState(action.size),
         message: action.message,
+      };
+    case HIDE_MODAL:
+      return {
+        ...state,
+        active: false,
       };
 
     default:

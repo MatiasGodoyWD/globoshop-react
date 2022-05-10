@@ -7,7 +7,7 @@ const MainWrapper = ({ children }) => {
   const modalState = useSelector((state) => state.modal.active);
 
   return (
-    <main className="main">
+    <main className="main" data-aos="fade-right">
       {children}
       {modalState && <ProductModal />}
     </main>

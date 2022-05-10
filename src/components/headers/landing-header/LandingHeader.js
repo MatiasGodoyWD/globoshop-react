@@ -16,7 +16,7 @@ const LandingHeader = () => {
 
   return (
     <>
-      <header id="landing__header" className="header">
+      <header id="landing__header" className="header" data-aos="fade-right">
         <LogosHeader />
         <Navbar navClass="navbar__menu">
           <FontAwesomeIcon

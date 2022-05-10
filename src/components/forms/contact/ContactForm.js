@@ -37,7 +37,11 @@ const ContactForm = () => {
   }, [isValid]);
   return (
     <>
-      <section className="contact__section" id="contact__section">
+      <section
+        className="contact__section"
+        id="contact__section"
+        data-aos="fade-right"
+      >
         <form
           className="contact__form"
           name="contact"

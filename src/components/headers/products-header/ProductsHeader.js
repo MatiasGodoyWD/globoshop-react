@@ -24,7 +24,7 @@ const ProductsHeader = ({ category }) => {
     dispatch(modalActions.hideModal());
   };
   return (
-    <header id="products__header" className="header">
+    <header id="products__header" className="header" data-aos="fade-right">
       <LogosHeader />
       <Navbar navClass="navbar__menu">
         <FontAwesomeIcon

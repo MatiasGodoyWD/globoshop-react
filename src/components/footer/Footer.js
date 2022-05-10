@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" data-aos="fade-right">
       <div className="footer__logos">
         <img
           src="https://i.ibb.co/VCnxGY8/GLOBOSHOP-gray.png"

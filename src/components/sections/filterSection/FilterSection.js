@@ -25,7 +25,7 @@ const FilterSection = ({ category }) => {
 
   return (
     <>
-      <section className="filter__section">
+      <section className="filter__section" data-aos="fade-right">
         <div
           className={`filter__tab ${clicked ? "filter__tab-active" : ""}`}
           onClick={() => dispatch(toggleFilterHidden())}

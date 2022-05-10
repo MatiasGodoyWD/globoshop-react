@@ -42,6 +42,7 @@ const Suscribe = () => {
       className="subscribe__section"
       name="suscribe"
       onSubmit={handleSubmit(suscribeSubmit)}
+      data-aos="fade-right"
     >
       <h2 className="slider__section__title">
         Suscribite y enterate de las últimas novedades

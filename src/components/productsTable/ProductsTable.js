@@ -11,7 +11,7 @@ const ProductsTable = () => {
 
   return (
     <>
-      <div className="table__container">
+      <div className="table__container" data-aos="fade-right">
         <table>
           <thead>
             <tr>

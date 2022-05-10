@@ -4,7 +4,11 @@ import { featuredProducts } from "../../../data/products";
 
 const FeaturedSections = () => {
   return (
-    <section className="slider__section" id="featured__section">
+    <section
+      className="slider__section"
+      id="featured__section"
+      data-aos="fade-right"
+    >
       <CardSwiper
         id={"featured__slider"}
         title={"Productos Destacados"}

@@ -3,14 +3,10 @@ import { useForm } from "react-hook-form";
 import Input from "../../input/Input";
 import "./shipping.css";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { shippingSchema } from "../../../helpers/schema";
 import ProductsTable from "../../productsTable/ProductsTable";
 import { useDispatch } from "react-redux";
-
 import { toggleModal } from "../../../redux/modal/modal-actions";
-import { Route, Navigate } from "react-router-dom";
-import Home from "../../../pages/home/Home";
 import { sendMail } from "../../../helpers/email";
 
 const ShippingForm = () => {
@@ -60,7 +56,7 @@ const ShippingForm = () => {
   return (
     <>
       <form
-        className="shipping__form"
+        className="shipping__form "
         name="shipping"
         data-aos="fade-right"
         onSubmit={handleSubmit(onSubmit)}

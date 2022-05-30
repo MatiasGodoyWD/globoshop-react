@@ -67,3 +67,13 @@ button:hover,
   transition: var(--animation);
   background-color: #cc0219;
 }
+
+[data-aos] {
+  pointer-events: none;
+}
+.aos-animate {
+  pointer-events: auto;
+}
+.aos-init[data-aos][data-aos].aos-animate {
+  transform: unset;
+}

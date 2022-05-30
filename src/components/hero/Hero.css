@@ -17,7 +17,6 @@
   justify-content: flex-start;
   padding: 0.4rem 2rem;
   align-items: center;
-
   font-size: 0.6rem;
 }
 
@@ -31,6 +30,7 @@
     .hero {
       background-image: url(https://i.ibb.co/7n0ppNc/mobile-hero-1.png);
       background-size: cover;
+      z-index: 1;
     }
   }
 

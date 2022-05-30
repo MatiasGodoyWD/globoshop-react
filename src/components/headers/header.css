@@ -6,6 +6,7 @@
   height: 9rem;
   background-color: var(--primary-white);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 99999;
 }
 
 .shipping__header {
@@ -39,6 +40,7 @@
   padding: 0rem 1rem;
   position: relative;
   background-color: var(--primary-white);
+  z-index: 99999;
 }
 
 .navbar__menu ul {
@@ -48,6 +50,7 @@
   font-family: var(--secondary-text);
   font-size: 1.2rem;
   font-weight: 400;
+  z-index: 99999;
 }
 
 .navbar__link {
@@ -70,11 +73,13 @@
 
 .navbar__navigation {
   width: 35%;
+  z-index: 99999;
 }
 
 #products__header .navbar__navigation {
   width: 55%;
-  z-index: 1202;
+
+  z-index: 99999;
 }
 
 .navbar__logo,
@@ -142,10 +147,11 @@
     transition: var(--animation);
     -moz-transition: var(--animation);
     -webkit-transition: var(--animation);
-    z-index: 1000;
+    z-index: 99999;
   }
   #products__header .navbar__navigation {
     width: 100%;
+    z-index: 99999;
   }
   .navbar__social {
     width: 30%;
@@ -178,6 +184,7 @@
     transition: var(--animation);
     -moz-transition: var(--animation);
     -webkit-transition: var(--animation);
+    z-index: 99999;
   }
   .navbar__fixed {
     padding: 0rem 1rem;
